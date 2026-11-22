@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b3b2c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="التكميل - السلامة" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20180%20180%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230b3b2c%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23061d15%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22180%22%20height%3D%22180%22%20rx%3D%2240%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%22156%22%20height%3D%22156%22%20rx%3D%2232%22%20fill%3D%22none%22%20stroke%3D%22%23d4af37%22%20stroke-width%3D%224%22%20stroke-opacity%3D%220.65%22/%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%2284%22%20text-anchor%3D%22middle%22%20fill%3D%22%23f7dc7c%22%20font-family%3D%22Cairo%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%3E%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%3C/text%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Cairo%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%3E%D8%A7%D9%84%D8%AA%D9%83%D9%85%D9%8A%D9%84%3C/text%3E%0A%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20180%20180%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230b3b2c%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23061d15%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22180%22%20height%3D%22180%22%20rx%3D%2240%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%22156%22%20height%3D%22156%22%20rx%3D%2232%22%20fill%3D%22none%22%20stroke%3D%22%23d4af37%22%20stroke-width%3D%224%22%20stroke-opacity%3D%220.65%22/%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%2284%22%20text-anchor%3D%22middle%22%20fill%3D%22%23f7dc7c%22%20font-family%3D%22Cairo%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%3E%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9%3C/text%3E%0A%20%20%3Ctext%20x%3D%2290%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%20font-family%3D%22Cairo%2C%20Arial%2C%20sans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%3E%D8%A7%D9%84%D8%AA%D9%83%D9%85%D9%8A%D9%84%3C/text%3E%0A%3C/svg%3E" />
+  <title>التكميل - السلامة الميدانية بالمنطقة المركزية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-body: #f4ede0;
+      --bg-card: #fbf7ef;
+      --bg-card-2: #f1e8d6;
+      --bg-input: #ffffff;
+      --primary: #0b3b2c;
+      --primary-light: #155943;
+      --gold: #b88b1e;
+      --gold-soft: rgba(184, 139, 30, 0.14);
+      --gold-border: rgba(184, 139, 30, 0.42);
+      --text: #18221d;
+      --text-muted: #5c6b64;
+      --border: rgba(24, 34, 29, 0.12);
+      --shadow: 0 10px 26px rgba(11, 59, 44, 0.08);
+    }
+
+    body.dark-theme {
+      --bg-body: #071913;
+      --bg-card: #0e2920;
+      --bg-card-2: #13362a;
+      --bg-input: #081e17;
+      --primary: #0b3b2c;
+      --primary-light: #165b45;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.14);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --text: #f3f7f5;
+      --text-muted: #9eb5ac;
+      --border: rgba(255, 255, 255, 0.09);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: var(--bg-body);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 96px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 14px 14px 28px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b3b2c 0%, #072219 100%);
+      border: 1px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -40px;
+      top: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge-org {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: #f7dc7c;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .hero-sub {
+      margin: 4px 0 0;
+      font-size: 12.5px;
+      color: #d6e4de;
+    }
+
+    .status-pill {
+      background: rgba(8, 30, 23, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 11px;
+      padding: 8px 12px;
+      text-align: center;
+      min-width: 112px;
+    }
+
+    .status-pill .lbl {
+      font-size: 11px;
+      color: #c8dcd4;
+      display: block;
+    }
+
+    .status-pill .val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f7dc7c;
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #d6e4de;
+    }
+
+    .quick-toggles {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .hero .chip-btn {
+      background: rgba(8, 30, 23, 0.72);
+      color: #f3f7f5;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .chip-btn.active,
+    .hero .chip-btn.active {
+      background: rgba(212, 175, 55, 0.22);
+      border-color: #f7dc7c;
+      color: #ffe88a;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 11px 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 560px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card .name {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .stat-card .num {
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    body.dark-theme .card-title {
+      color: #f3d56b;
+    }
+
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .member-row {
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .member-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 145px;
+    }
+
+    .member-call {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8c6508;
+    }
+
+    body.dark-theme .member-call {
+      color: #f3d56b;
+    }
+
+    .member-name {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .status-select {
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--gold-border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      min-width: 135px;
+      cursor: pointer;
+    }
+
+    .msg-box {
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: 11px;
+      padding: 14px;
+      white-space: pre-line;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .actions-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    @media (min-width: 600px) {
+      .actions-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .btn {
+      border: none;
+      border-radius: 11px;
+      padding: 11px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: 0.18s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e3c14b, #b8911e);
+      color: #091a13;
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, #1ea356, #136e39);
+      color: #fff;
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, #1d6fd6, #134b94);
+      color: #fff;
+    }
+
+    .btn-dark {
+      background: var(--bg-card-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.14);
+      color: #b91c1c;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+
+    body.dark-theme .btn-danger {
+      color: #fca5a5;
+    }
+
+    .edit-row {
+      display: grid;
+      grid-template-columns: 115px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      background: var(--bg-card-2);
+      padding: 8px;
+      border-radius: 11px;
+      border: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 500px) {
+      .edit-row {
+        grid-template-columns: 1fr 1fr auto;
+      }
+    }
+
+    input[type="text"] {
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    .add-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 520px) {
+      .add-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .history-item {
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .history-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .history-msg {
+      white-space: pre-line;
+      font-size: 13.5px;
+      line-height: 1.7;
+      background: var(--bg-input);
+      padding: 10px;
+      border-radius: 9px;
+      margin-bottom: 8px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .home-shortcut-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 10px 13px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+      font-size: 12.5px;
+    }
+
+    .home-shortcut-bar.standalone-hide {
+      display: none;
+    }
+
+    .home-shortcut-text {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .home-shortcut-text span {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="badge-org">السلامة الميدانية بالمنطقة المركزية</div>
+          <h1>التكميل</h1>
+          <p class="hero-sub">متابعة القوة والنداءات وتوليد رسائل التكميل الفورية</p>
+        </div>
+        <div class="status-pill">
+          <span class="lbl">القوة / الموجود</span>
+          <span class="val" id="headerSummary">١١ / ٨</span>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div id="dateDisplay">جاري تحميل التاريخ...</div>
+        <div class="quick-toggles">
+          <button type="button" class="chip-btn" id="btnThemeToggle" onclick="toggleTheme()">ثيم داكن</button>
+          <button type="button" class="chip-btn active" id="btnGreetingMorning" onclick="setGreeting('صباح الخير')">صباح الخير</button>
+          <button type="button" class="chip-btn" id="btnArabicNums" onclick="toggleArabicNums()">أرقام ١٢٣</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button type="button" class="tab-btn active" id="tab-report" onclick="switchTab('report')">التكميل والرسالة</button>
+      <button type="button" class="tab-btn" id="tab-roster" onclick="switchTab('roster')">إدارة القوة والنداء</button>
+      <button type="button" class="tab-btn" id="tab-history" onclick="switchTab('history')">سجل التكميل</button>
+    </nav>
+
+    <section id="view-report">
+      <div class="home-shortcut-bar" id="homeShortcutBar">
+        <div class="home-shortcut-text">
+          تثبيت كأيقونة على الصفحة الرئيسية للفتح المباشر
+          <span>من Safari اضغط زر المشاركة (↑) ثم «إضافة إلى الصفحة الرئيسية»</span>
+        </div>
+        <button type="button" class="chip-btn" onclick="dismissShortcutBar()">إخفاء</button>
+      </div>
+
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>تحديد حالة الأفراد</span>
+          <button type="button" class="chip-btn" onclick="resetAllPresent()">تعيين الكل موجود</button>
+        </div>
+        <div class="member-list" id="memberStatusList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>صيغة الرسالة الجاهزة</span>
+        </div>
+
+        <div class="msg-box" id="messagePreview"></div>
+
+        <div class="actions-row">
+          <button type="button" class="btn btn-gold" onclick="copyMessage()">نسخ الرسالة</button>
+          <a class="btn btn-green" id="whatsappLink" href="#" target="_blank" rel="noopener">إرسال واتساب</a>
+          <a class="btn btn-blue" id="smsLink" href="#">رسالة SMS</a>
+          <button type="button" class="btn btn-dark" onclick="saveToHistory()">حفظ في السجل</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-roster" class="hidden">
+      <div class="card">
+        <div class="card-title">
+          <span>تعديل الأسماء والنداءات</span>
+          <button type="button" class="chip-btn" onclick="autoNumberCalls()">ترقيم تلقائي (سلام ١-١)</button>
+        </div>
+
+        <div id="rosterEditorList"></div>
+
+        <div class="add-box">
+          <input type="text" id="newMemberName" placeholder="اسم الفرد الجديد..." />
+          <input type="text" id="newMemberCall" placeholder="النداء (مثال: سلام ١-١٢)" />
+          <button type="button" class="btn btn-gold" onclick="addMember()">إضافة فرد</button>
+        </div>
+
+        <div style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-dark" onclick="restoreDefaultRoster()">استعادة الكشف الأساسي (١١ فرداً)</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-history" class="hidden">
+      <div class="card">
+        <div class="card-title">
+          <span>سجل رسائل التكميل المحفوظة</span>
+          <button type="button" class="btn btn-danger" style="padding: 6px 10px; font-size: 12px;" onclick="clearHistory()">مسح السجل</button>
+        </div>
+        <div id="historyList"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const ORG_NAME = "السلامة الميدانية بالمنطقة المركزية";
+
+    const STATUS_OPTIONS = [
+      { key: "present", label: "موجود", msgWord: "" },
+      { key: "muslim", label: "مسلم", msgWord: "مسلم" },
+      { key: "leave", label: "اجازة", msgWord: "اجازه" },
+      { key: "crossing", label: "تعدية", msgWord: "تعدية" },
+      { key: "sick", label: "مرضية", msgWord: "مرضية" },
+      { key: "companion", label: "مرافق", msgWord: "مرافق" },
+      { key: "absent", label: "غياب", msgWord: "غياب" }
+    ];
+
+    const DEFAULT_MEMBERS = [
+      { id: 1, name: "عبد العزيز", call: "سلام ١-١", status: "present" },
+      { id: 2, name: "احمد", call: "سلام ١-٢", status: "present" },
+      { id: 3, name: "يوسف", call: "سلام ١-٣", status: "present" },
+      { id: 4, name: "احمد شهاب", call: "سلام ١-٤", status: "present" },
+      { id: 5, name: "فيصل", call: "سلام ١-٥", status: "present" },
+      { id: 6, name: "عبدالعزيز السهلي", call: "سلام ١-٦", status: "muslim" },
+      { id: 7, name: "ريان", call: "سلام ١-٧", status: "present" },
+      { id: 8, name: "الحمدي", call: "سلام ١-٨", status: "leave" },
+      { id: 9, name: "عبد الهادي", call: "سلام ١-٩", status: "leave" },
+      { id: 10, name: "نادر", call: "سلام ١-١٠", status: "present" },
+      { id: 11, name: "ياسر", call: "سلام ١-١١", status: "present" }
+    ];
+
+    const STORAGE_KEYS = {
+      members: "takmeel_central_safety_members_v3",
+      settings: "takmeel_central_safety_settings_v3",
+      history: "takmeel_central_safety_history_v3"
+    };
+
+    let members = loadMembers();
+    let settings = loadSettings();
+    let history = loadHistory();
+
+    function loadMembers() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.members);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length) return parsed;
+        }
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(DEFAULT_MEMBERS));
+    }
+
+    function loadSettings() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.settings);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const greetingVal = parsed.greeting === "مساء الخير" ? "صباح الخير" : (parsed.greeting || "صباح الخير");
+          return Object.assign({
+            greeting: "صباح الخير",
+            useArabicNums: true,
+            includeOrg: false,
+            themeMode: "beige"
+          }, parsed, { greeting: greetingVal, includeOrg: false });
+        }
+      } catch (e) {}
+      return {
+        greeting: "صباح الخير",
+        useArabicNums: true,
+        includeOrg: false,
+        themeMode: "beige"
+      };
+    }
+
+    function loadHistory() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.history);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.members, JSON.stringify(members));
+        localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(settings));
+        localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(history));
+      } catch (e) {}
+    }
+
+    function fmtNum(n) {
+      const str = String(Math.max(0, Number(n) || 0));
+      if (!settings.useArabicNums) return str;
+      const map = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+      return str.replace(/\d/g, d => map[Number(d)]);
+    }
+
+    function formatCallForMessage(callText) {
+      const trimmed = (callText || "").trim();
+      if (!trimmed) return "";
+      if (!settings.useArabicNums) {
+        const arMap = { "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4", "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9" };
+        return trimmed.replace(/[٠-٩]/g, ch => arMap[ch] || ch);
+      }
+      return trimmed;
+    }
+
+    function toLatinDigits(str) {
+      const map = { "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4", "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9" };
+      return String(str || "").replace(/[٠-٩]/g, ch => map[ch] || ch);
+    }
+
+    function updateDateDisplay() {
+      const now = new Date();
+      let hijriDisplay = "";
+      try {
+        hijriDisplay = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(now).replace(/\s*(هـ|هجري)$/u, "").trim();
+      } catch (e) {}
+
+      let gregDisplay = "";
+      try {
+        // Force Gregorian calendar with English/Latin locale so it never falls back to Hijri in ar-SA on iOS
+        const parts = new Intl.DateTimeFormat("en-GB-u-ca-gregory", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        }).formatToParts(now);
+        const day = parts.find(p => p.type === "day")?.value || "";
+        const month = parts.find(p => p.type === "month")?.value || "";
+        const year = parts.find(p => p.type === "year")?.value || "";
+        if (day && month && year) {
+          gregDisplay = `${year}/${month}/${day}`;
+        }
+      } catch (e) {}
+
+      if (!gregDisplay) {
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, "0");
+        const d = String(now.getDate()).padStart(2, "0");
+        gregDisplay = `${y}/${m}/${d}`;
+      }
+
+      const normHijri = toLatinDigits(hijriDisplay);
+      const normGreg = toLatinDigits(gregDisplay);
+      const isActuallyDifferent = normHijri && normGreg && !normHijri.includes(normGreg) && normHijri !== normGreg;
+
+      if (hijriDisplay && isActuallyDifferent) {
+        document.getElementById("dateDisplay").textContent = `${hijriDisplay} هـ — ${gregDisplay} م`;
+      } else if (hijriDisplay) {
+        document.getElementById("dateDisplay").textContent = `${hijriDisplay} هـ`;
+      } else {
+        document.getElementById("dateDisplay").textContent = `${gregDisplay} م`;
+      }
+    }
+
+    function getCounts() {
+      const counts = {
+        total: members.length,
+        present: 0,
+        muslim: 0,
+        leave: 0,
+        crossing: 0,
+        sick: 0,
+        companion: 0,
+        absent: 0
+      };
+      for (const m of members) {
+        if (counts[m.status] !== undefined) {
+          counts[m.status]++;
+        } else {
+          counts.present++;
+        }
+      }
+      return counts;
+    }
+
+    function getStatusWordForGroup(st, count) {
+      if (st.key === "muslim" && count === 2) {
+        return "مسلمين";
+      }
+      return st.msgWord;
+    }
+
+    function buildMessage() {
+      const counts = getCounts();
+      const lines = [
+        "السلام عليكم ورحمة الله وبركاته",
+        settings.greeting
+      ];
+
+
+
+      lines.push(`القوه ${fmtNum(counts.total)} الموجود ${fmtNum(counts.present)}`);
+
+      const orderedStatuses = STATUS_OPTIONS.filter(s => s.key !== "present");
+      for (const st of orderedStatuses) {
+        const groupCalls = members
+          .filter(m => m.status === st.key)
+          .map(m => formatCallForMessage(m.call))
+          .filter(Boolean);
+
+        if (groupCalls.length > 0) {
+          const word = getStatusWordForGroup(st, groupCalls.length);
+          lines.push(`${groupCalls.join(" و")} ${word}`);
+        }
+      }
+
+      return lines.join("\n");
+    }
+
+    function renderStats() {
+      const c = getCounts();
+      const isDark = settings.themeMode === "dark";
+      document.getElementById("headerSummary").textContent = `${fmtNum(c.total)} / ${fmtNum(c.present)}`;
+
+      const items = [
+        { label: "القوة", val: c.total, color: isDark ? "#f3d56b" : "#8c6508" },
+        { label: "الموجود", val: c.present, color: isDark ? "#4ade80" : "#15803d" },
+        { label: "المسلمين", val: c.muslim, color: isDark ? "#38bdf8" : "#0369a1" },
+        { label: "الإجازة", val: c.leave, color: isDark ? "#facc15" : "#a16207" },
+        { label: "التعدية", val: c.crossing, color: isDark ? "#fb923c" : "#c2410c" },
+        { label: "مرضية", val: c.sick, color: isDark ? "#f87171" : "#b91c1c" },
+        { label: "مرافق", val: c.companion, color: isDark ? "#c084fc" : "#7e22ce" },
+        { label: "غياب", val: c.absent, color: isDark ? "#ef4444" : "#991b1b" }
+      ];
+
+      document.getElementById("statsGrid").innerHTML = items.map(it => `
+        <div class="stat-card">
+          <span class="name">${it.label}</span>
+          <span class="num" style="color:${it.color}">${fmtNum(it.val)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderMemberStatusList() {
+      const container = document.getElementById("memberStatusList");
+      container.innerHTML = members.map(m => `
+        <div class="member-row">
+          <div class="member-info">
+            <span class="member-call">${escapeHtml(formatCallForMessage(m.call))}</span>
+            <span class="member-name">${escapeHtml(m.name)}</span>
+          </div>
+          <select class="status-select" onchange="changeMemberStatus(${m.id}, this.value)">
+            ${STATUS_OPTIONS.map(opt => `
+              <option value="${opt.key}" ${m.status === opt.key ? "selected" : ""}>${opt.label}</option>
+            `).join("")}
+          </select>
+        </div>
+      `).join("");
+    }
+
+    function renderMessageAndLinks() {
+      const msg = buildMessage();
+      document.getElementById("messagePreview").textContent = msg;
+      const encoded = encodeURIComponent(msg);
+      document.getElementById("whatsappLink").href = `https://wa.me/?text=${encoded}`;
+      document.getElementById("smsLink").href = `sms:?body=${encoded}`;
+    }
+
+    function renderRosterEditor() {
+      const container = document.getElementById("rosterEditorList");
+      container.innerHTML = members.map(m => `
+        <div class="edit-row">
+          <input type="text" value="${escapeAttr(m.call)}" placeholder="النداء" onchange="updateMemberField(${m.id}, 'call', this.value)" />
+          <input type="text" value="${escapeAttr(m.name)}" placeholder="الاسم" onchange="updateMemberField(${m.id}, 'name', this.value)" />
+          <button type="button" class="btn btn-danger" style="padding: 8px 10px;" onclick="removeMember(${m.id})" title="حذف">✕</button>
+        </div>
+      `).join("");
+    }
+
+    function renderHistory() {
+      const container = document.getElementById("historyList");
+      if (!history.length) {
+        container.innerHTML = `<p style="color:var(--text-muted); font-size:13px; text-align:center; margin:12px 0;">لا توجد رسائل محفوظة في السجل حتى الآن.</p>`;
+        return;
+      }
+
+      container.innerHTML = history.map((item, idx) => `
+        <div class="history-item">
+          <div class="history-head">
+            <span>${escapeHtml(item.time)}</span>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="chip-btn" onclick="copyText(${idx})">نسخ</button>
+              <button type="button" class="chip-btn" onclick="deleteHistoryItem(${idx})">حذف</button>
+            </div>
+          </div>
+          <div class="history-msg">${escapeHtml(item.text)}</div>
+        </div>
+      `).join("");
+    }
+
+    function applyThemeClass() {
+      const isDark = settings.themeMode === "dark";
+      document.body.classList.toggle("dark-theme", isDark);
+      const themeBtn = document.getElementById("btnThemeToggle");
+      if (themeBtn) {
+        themeBtn.textContent = isDark ? "ثيم بيج" : "ثيم داكن";
+      }
+    }
+
+    function toggleTheme() {
+      settings.themeMode = settings.themeMode === "dark" ? "beige" : "dark";
+      renderAll();
+    }
+
+    function renderAll() {
+      applyThemeClass();
+      syncToggleButtons();
+      renderStats();
+      renderMemberStatusList();
+      renderMessageAndLinks();
+      renderRosterEditor();
+      renderHistory();
+      saveState();
+    }
+
+    function syncToggleButtons() {
+      document.getElementById("btnGreetingMorning").classList.toggle("active", settings.greeting === "صباح الخير");
+      document.getElementById("btnArabicNums").classList.toggle("active", settings.useArabicNums);
+    }
+
+    function setGreeting(g) {
+      settings.greeting = g;
+      renderAll();
+    }
+
+    function toggleArabicNums() {
+      settings.useArabicNums = !settings.useArabicNums;
+      renderAll();
+    }
+
+    function changeMemberStatus(id, newStatus) {
+      const target = members.find(m => m.id === id);
+      if (target) {
+        target.status = newStatus;
+        renderAll();
+      }
+    }
+
+    function resetAllPresent() {
+      members = members.map(m => ({ ...m, status: "present" }));
+      renderAll();
+      showToast("تم تعيين جميع الأفراد موجودين");
+    }
+
+    function updateMemberField(id, field, val) {
+      const target = members.find(m => m.id === id);
+      if (target) {
+        target[field] = val.trim();
+        renderAll();
+      }
+    }
+
+    function addMember() {
+      const nameInput = document.getElementById("newMemberName");
+      const callInput = document.getElementById("newMemberCall");
+      const name = nameInput.value.trim();
+      if (!name) {
+        showToast("يرجى إدخال اسم الفرد أولاً");
+        return;
+      }
+      const nextNum = members.length + 1;
+      const call = callInput.value.trim() || `سلام ١-${fmtNum(nextNum)}`;
+      const maxId = members.reduce((acc, m) => Math.max(acc, m.id), 0);
+      members.push({
+        id: maxId + 1,
+        name,
+        call,
+        status: "present"
+      });
+      nameInput.value = "";
+      callInput.value = "";
+      renderAll();
+      showToast("تمت إضافة الفرد إلى القوة");
+    }
+
+    function removeMember(id) {
+      if (members.length <= 1) {
+        showToast("يجب بقاء فرد واحد على الأقل");
+        return;
+      }
+      members = members.filter(m => m.id !== id);
+      renderAll();
+      showToast("تم حذف الفرد");
+    }
+
+    function autoNumberCalls() {
+      members = members.map((m, idx) => ({
+        ...m,
+        call: `سلام ١-${fmtNum(idx + 1)}`
+      }));
+      renderAll();
+      showToast("تم تحديث نداءات القوة تلقائياً");
+    }
+
+    function restoreDefaultRoster() {
+      members = JSON.parse(JSON.stringify(DEFAULT_MEMBERS));
+      renderAll();
+      showToast("تمت استعادة الكشف الأساسي (١١ فرداً)");
+    }
+
+    function copyMessage() {
+      const text = buildMessage();
+      navigator.clipboard?.writeText(text).then(() => {
+        showToast("تم نسخ رسالة التكميل");
+      }).catch(() => {
+        fallbackCopy(text);
+      });
+    }
+
+    function copyText(idx) {
+      const item = history[idx];
+      if (!item) return;
+      navigator.clipboard?.writeText(item.text).then(() => {
+        showToast("تم نسخ الرسالة من السجل");
+      }).catch(() => {
+        fallbackCopy(item.text);
+      });
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("تم نسخ الرسالة");
+    }
+
+    function saveToHistory() {
+      const text = buildMessage();
+      const nowStr = new Date().toLocaleString("ar-SA");
+      history.unshift({
+        time: nowStr,
+        text
+      });
+      if (history.length > 40) history.pop();
+      saveState();
+      renderHistory();
+      showToast("تم حفظ التكميل في السجل");
+    }
+
+    function deleteHistoryItem(idx) {
+      history.splice(idx, 1);
+      saveState();
+      renderHistory();
+    }
+
+    function clearHistory() {
+      history = [];
+      saveState();
+      renderHistory();
+      showToast("تم مسح السجل");
+    }
+
+    function switchTab(tab) {
+      ["report", "roster", "history"].forEach(t => {
+        document.getElementById(`view-${t}`).classList.toggle("hidden", t !== tab);
+        document.getElementById(`tab-${t}`).classList.toggle("active", t === tab);
+      });
+    }
+
+    function showToast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(showToast._timer);
+      showToast._timer = setTimeout(() => el.classList.remove("show"), 2200);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeAttr(str) {
+      return String(str || "").replace(/"/g, "&quot;");
+    }
+
+    function initHomeShortcutBanner() {
+      const bar = document.getElementById("homeShortcutBar");
+      if (!bar) return;
+      const isStandalone = window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+      const dismissed = localStorage.getItem("takmeel_hide_home_tip_v1") === "1";
+      if (isStandalone || dismissed) {
+        bar.classList.add("standalone-hide");
+      }
+    }
+
+    function dismissShortcutBar() {
+      localStorage.setItem("takmeel_hide_home_tip_v1", "1");
+      const bar = document.getElementById("homeShortcutBar");
+      if (bar) bar.classList.add("standalone-hide");
+    }
+
+    updateDateDisplay();
+    initHomeShortcutBanner();
+    renderAll();
+  </script>
+</body>
+</html>

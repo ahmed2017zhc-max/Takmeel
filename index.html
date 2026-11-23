@@ -2,504 +2,1305 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="التكميل - السلامة" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="" />
+  <link rel="icon" type="image/png" href="" />
   <title>التكميل - السلامة الميدانية بالمنطقة المركزية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy-bg: #051b32;
-      --navy-card: #092442;
-      --navy-input: #041527;
-      --navy-border: rgba(244, 246, 240, 0.22);
-      --ivory: #f4f6f0;
-      --ivory-soft: rgba(244, 246, 240, 0.78);
-      --ivory-muted: rgba(244, 246, 240, 0.55);
-      --accent-white: #ffffff;
+      --bg-body: #f4ede0;
+      --bg-card: #fbf7ef;
+      --bg-card-2: #f1e8d6;
+      --bg-input: #ffffff;
+      --primary: #0b3b2c;
+      --primary-light: #155943;
+      --gold: #b88b1e;
+      --gold-soft: rgba(184, 139, 30, 0.14);
+      --gold-border: rgba(184, 139, 30, 0.42);
+      --text: #18221d;
+      --text-muted: #5c6b64;
+      --border: rgba(24, 34, 29, 0.12);
+      --shadow: 0 10px 26px rgba(11, 59, 44, 0.08);
+    }
+
+    body.dark-theme {
+      --bg-body: #071913;
+      --bg-card: #0e2920;
+      --bg-card-2: #13362a;
+      --bg-input: #081e17;
+      --primary: #0b3b2c;
+      --primary-light: #165b45;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.14);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --text: #f3f7f5;
+      --text-muted: #9eb5ac;
+      --border: rgba(255, 255, 255, 0.09);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background-color: var(--navy-bg);
-      color: var(--ivory);
+      margin: 0;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: var(--bg-body);
+      color: var(--text);
       min-height: 100vh;
-      padding: 16px;
-      line-height: 1.6;
+      padding-bottom: 96px;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 780px;
       margin: 0 auto;
+      padding: 14px 14px 28px;
     }
 
-    .header {
-      background: var(--navy-card);
-      border: 1px solid var(--navy-border);
+    .hero {
+      background: linear-gradient(135deg, #0b3b2c 0%, #072219 100%);
+      border: 1px solid var(--gold-border);
       border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .emblem-box {
-      width: 112px;
-      height: 112px;
-      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
-      background: var(--navy-bg);
+      color: #ffffff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: -40px;
+      top: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top {
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .emblem-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .header h1 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--accent-white);
-    }
-
-    .header p {
-      font-size: 0.92rem;
-      color: var(--ivory-soft);
-    }
-
-    .card {
-      background: var(--navy-card);
-      border: 1px solid var(--navy-border);
-      border-radius: 16px;
-      padding: 18px;
-      margin-bottom: 16px;
-    }
-
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--accent-white);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--navy-border);
-      display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 12px;
+      flex-wrap: wrap;
     }
 
-    label {
-      display: block;
-      font-size: 0.86rem;
-      color: var(--ivory-soft);
+    .badge-org {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.16);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: #f7dc7c;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
       margin-bottom: 6px;
     }
 
-    input, select, textarea {
-      width: 100%;
-      background: var(--navy-input);
-      color: var(--ivory);
-      border: 1px solid var(--navy-border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 0.92rem;
-      outline: none;
+    .hero h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
     }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent-white);
+    .hero-sub {
+      margin: 4px 0 0;
+      font-size: 12.5px;
+      color: #d6e4de;
     }
 
-    textarea {
-      min-height: 82px;
-      resize: vertical;
+    .status-pill {
+      background: rgba(8, 30, 23, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 11px;
+      padding: 8px 12px;
+      text-align: center;
+      min-width: 112px;
     }
 
-    .roster-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .status-pill .lbl {
+      font-size: 11px;
+      color: #c8dcd4;
+      display: block;
+    }
+
+    .status-pill .val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f7dc7c;
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #d6e4de;
+    }
+
+    .quick-toggles {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .hero .chip-btn {
+      background: rgba(8, 30, 23, 0.72);
+      color: #f3f7f5;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .chip-btn.active,
+    .hero .chip-btn.active {
+      background: rgba(212, 175, 55, 0.22);
+      border-color: #f7dc7c;
+      color: #ffe88a;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 11px 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 560px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card .name {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .stat-card .num {
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 2px;
+      display: block;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    body.dark-theme .card-title {
+      color: #f3d56b;
+    }
+
+    .member-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
     }
 
     .member-row {
-      background: var(--navy-input);
-      border: 1px solid var(--navy-border);
-      border-radius: 10px;
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-radius: 11px;
       padding: 10px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .member-check {
+    .member-info {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      flex: 1;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 145px;
     }
 
-    .member-check input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--accent-white);
-      cursor: pointer;
+    .member-call {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8c6508;
+    }
+
+    body.dark-theme .member-call {
+      color: #f3d56b;
+    }
+
+    .member-name {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text);
     }
 
     .status-select {
-      width: auto;
-      padding: 5px 8px;
-      font-size: 0.8rem;
-      border-radius: 8px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    button {
-      background: var(--ivory);
-      color: var(--navy-bg);
-      border: 1px solid var(--ivory);
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--gold-border);
       border-radius: 10px;
-      padding: 10px 16px;
-      font-size: 0.9rem;
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 13px;
       font-weight: 700;
+      min-width: 135px;
       cursor: pointer;
-      transition: opacity 0.2s ease;
     }
 
-    button:hover {
-      opacity: 0.9;
-    }
-
-    button.secondary {
-      background: transparent;
-      color: var(--ivory);
-      border: 1px solid var(--navy-border);
-    }
-
-    .output-box {
-      background: var(--navy-input);
-      border: 1px solid var(--navy-border);
-      border-radius: 12px;
+    .msg-box {
+      background: var(--bg-input);
+      border: 1px solid var(--gold-border);
+      border-radius: 11px;
       padding: 14px;
-      white-space: pre-wrap;
-      font-size: 0.92rem;
-      color: var(--ivory);
-      min-height: 150px;
+      white-space: pre-line;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    .log-item {
-      background: var(--navy-input);
-      border: 1px solid var(--navy-border);
-      border-radius: 10px;
+    .actions-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    @media (min-width: 600px) {
+      .actions-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .btn {
+      border: none;
+      border-radius: 11px;
+      padding: 11px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: 0.18s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e3c14b, #b8911e);
+      color: #091a13;
+    }
+
+    .btn-green {
+      background: linear-gradient(135deg, #1ea356, #136e39);
+      color: #fff;
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, #1d6fd6, #134b94);
+      color: #fff;
+    }
+
+    .btn-dark {
+      background: var(--bg-card-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.14);
+      color: #b91c1c;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+
+    body.dark-theme .btn-danger {
+      color: #fca5a5;
+    }
+
+    .edit-row {
+      display: grid;
+      grid-template-columns: 115px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      background: var(--bg-card-2);
+      padding: 8px;
+      border-radius: 11px;
+      border: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 500px) {
+      .edit-row {
+        grid-template-columns: 1fr 1fr auto;
+      }
+    }
+
+    input[type="text"] {
+      background: var(--bg-input);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    .add-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 520px) {
+      .add-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .history-item {
+      background: var(--bg-card-2);
+      border: 1px solid var(--border);
+      border-radius: 11px;
       padding: 12px;
       margin-bottom: 10px;
     }
 
-    .log-meta {
-      font-size: 0.8rem;
-      color: var(--ivory-muted);
-      margin-bottom: 6px;
+    .history-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .history-msg {
+      white-space: pre-line;
+      font-size: 13.5px;
+      line-height: 1.7;
+      background: var(--bg-input);
+      padding: 10px;
+      border-radius: 9px;
+      margin-bottom: 8px;
+    }
+
+    .hidden {
+      display: none !important;
     }
 
     .toast {
       position: fixed;
-      bottom: 20px;
+      bottom: 22px;
       left: 50%;
-      transform: translateX(-50%);
-      background: var(--ivory);
-      color: var(--navy-bg);
+      transform: translateX(-50%) translateY(20px);
+      background: #0b3b2c;
+      color: #fff;
+      border: 1px solid #d4af37;
       padding: 10px 18px;
       border-radius: 999px;
+      font-size: 13px;
       font-weight: 700;
-      font-size: 0.88rem;
+      box-shadow: var(--shadow);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      transition: 0.25s;
       z-index: 999;
+    }
+
+    .home-shortcut-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 14px;
+      padding: 10px 13px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+      font-size: 12.5px;
+    }
+
+    .home-shortcut-bar.standalone-hide {
+      display: none;
+    }
+
+    .home-shortcut-text {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .home-shortcut-text span {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
     }
 
     .toast.show {
       opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <div class="emblem-box">
-        <!-- استبدل src برابط أو مسار صورة الشعار المعتمد بدون إطار -->
-        <img id="emblemImg" src="c3613d4b.jpeg" alt="شعار الدفاع المدني بدون إطار" />
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="badge-org">السلامة الميدانية بالمنطقة المركزية</div>
+          <h1>التكميل</h1>
+          <p class="hero-sub">متابعة القوة والنداءات وتوليد رسائل التكميل الفورية</p>
+        </div>
+        <div class="status-pill">
+          <span class="lbl">القوة / الموجود</span>
+          <span class="val" id="headerSummary">١١ / ٨</span>
+        </div>
       </div>
-      <div>
-        <h1>التكميل - السلامة الميدانية بالمنطقة المركزية</h1>
-        <p>متابعة القوة الميدانية، إضافات التكميل، وتوليد التقرير اليومي</p>
+
+      <div class="hero-meta">
+        <div id="dateDisplay">جاري تحميل التاريخ...</div>
+        <div class="quick-toggles">
+          <button type="button" class="chip-btn" id="btnThemeToggle" onclick="toggleTheme()">ثيم داكن</button>
+          <button type="button" class="chip-btn active" id="btnGreetingMorning" onclick="setGreeting('صباح الخير')">صباح الخير</button>
+          <button type="button" class="chip-btn" id="btnArabicNums" onclick="toggleArabicNums()">أرقام ١٢٣</button>
+        </div>
       </div>
     </header>
 
-    <section class="card">
-      <div class="card-title">
-        <span>بيانات التكميل الأساسية</span>
-        <span id="presentCount" style="font-size:0.88rem; color:var(--ivory-soft);">الحضور: 0 / 11</span>
+    <nav class="tabs">
+      <button type="button" class="tab-btn active" id="tab-report" onclick="switchTab('report')">التكميل والرسالة</button>
+      <button type="button" class="tab-btn" id="tab-roster" onclick="switchTab('roster')">إدارة القوة والنداء</button>
+      <button type="button" class="tab-btn" id="tab-history" onclick="switchTab('history')">سجل التكميل</button>
+    </nav>
+
+    <section id="view-report">
+      <div class="home-shortcut-bar" id="homeShortcutBar">
+        <div class="home-shortcut-text">
+          تثبيت كأيقونة على الصفحة الرئيسية للفتح المباشر
+          <span>من Safari اضغط زر المشاركة (↑) ثم «إضافة إلى الصفحة الرئيسية»</span>
+        </div>
+        <button type="button" class="chip-btn" onclick="dismissShortcutBar()">إخفاء</button>
       </div>
-      <div class="grid-2">
-        <div>
-          <label for="shiftDate">التاريخ</label>
-          <input type="date" id="shiftDate" />
+
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>تحديد حالة الأفراد</span>
+          <button type="button" class="chip-btn" onclick="resetAllPresent()">تعيين الكل موجود</button>
         </div>
-        <div>
-          <label for="shiftPeriod">الفترة / الوردية</label>
-          <select id="shiftPeriod">
-            <option value="الصباحية">الصباحية</option>
-            <option value="المسائية">المسائية</option>
-            <option value="الليلية">الليلية</option>
-          </select>
+        <div class="member-list" id="memberStatusList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>صيغة الرسالة الجاهزة</span>
         </div>
-        <div>
-          <label for="sectorName">القطاع / الموقع</label>
-          <input type="text" id="sectorName" value="المنطقة المركزية" />
-        </div>
-        <div>
-          <label for="supervisorName">المباشر / المسؤول</label>
-          <input type="text" id="supervisorName" placeholder="اسم المسؤول الميداني" />
+
+        <div class="msg-box" id="messagePreview"></div>
+
+        <div class="actions-row">
+          <button type="button" class="btn btn-gold" onclick="copyMessage()">نسخ الرسالة</button>
+          <a class="btn btn-green" id="whatsappLink" href="#" target="_blank" rel="noopener">إرسال واتساب</a>
+          <a class="btn btn-blue" id="smsLink" href="#">رسالة SMS</a>
+          <button type="button" class="btn btn-dark" onclick="saveToHistory()">حفظ في السجل</button>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-title">
-        <span>إضافات التكميل والمستجدات الميدانية</span>
-      </div>
-      <div class="grid-2">
-        <div>
-          <label for="extraType">نوع الإضافة</label>
-          <select id="extraType">
-            <option value="ملاحظة سلامة ميدانية">ملاحظة سلامة ميدانية</option>
-            <option value="بلاغ / متابعة منشأة">بلاغ / متابعة منشأة</option>
-            <option value="تعزيز / تكليف إضافي">تعزيز / تكليف إضافي</option>
-            <option value="تحديث معدات / جاهزية">تحديث معدات / جاهزية</option>
-          </select>
+    <section id="view-roster" class="hidden">
+      <div class="card">
+        <div class="card-title">
+          <span>تعديل الأسماء والنداءات</span>
+          <button type="button" class="chip-btn" onclick="autoNumberCalls()">ترقيم تلقائي (سلام ١-١)</button>
         </div>
-        <div>
-          <label for="extraLocation">الموقع / المنشأة المرتبطة بالإضافة</label>
-          <input type="text" id="extraLocation" placeholder="مثال: فندق / سوق / شارع..." />
+
+        <div id="rosterEditorList"></div>
+
+        <div class="add-box">
+          <input type="text" id="newMemberName" placeholder="اسم الفرد الجديد..." />
+          <input type="text" id="newMemberCall" placeholder="النداء (مثال: سلام ١-١٢)" />
+          <button type="button" class="btn btn-gold" onclick="addMember()">إضافة فرد</button>
+        </div>
+
+        <div style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-dark" onclick="restoreDefaultRoster()">استعادة الكشف الأساسي (١١ فرداً)</button>
         </div>
       </div>
-      <div style="margin-top:12px;">
-        <label for="extraNotes">تفاصيل الإضافة على التكميل</label>
-        <textarea id="extraNotes" placeholder="اكتب أي إضافة أو مستجد أو ملاحظة ميدانية تود إلحاقها بنص التكميل..."></textarea>
-      </div>
     </section>
 
-    <section class="card">
-      <div class="card-title">
-        <span>قوة السلامة الميدانية (11 فرداً)</span>
-        <button type="button" class="secondary" onclick="toggleAll(true)" style="padding:5px 10px; font-size:0.8rem;">تحديد الكل</button>
+    <section id="view-history" class="hidden">
+      <div class="card">
+        <div class="card-title">
+          <span>سجل رسائل التكميل المحفوظة</span>
+          <button type="button" class="btn btn-danger" style="padding: 6px 10px; font-size: 12px;" onclick="clearHistory()">مسح السجل</button>
+        </div>
+        <div id="historyList"></div>
       </div>
-      <div class="roster-list" id="rosterList"></div>
-    </section>
-
-    <section class="card">
-      <div class="card-title"><span>نص التكميل الجاهز</span></div>
-      <div class="output-box" id="reportOutput"></div>
-      <div class="actions">
-        <button type="button" onclick="generateReport()">تحديث التكميل</button>
-        <button type="button" onclick="copyReport()">نسخ النص</button>
-        <button type="button" class="secondary" onclick="saveLog()">حفظ في السجل</button>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="card-title">
-        <span>السجل المحفوظ</span>
-        <button type="button" class="secondary" onclick="clearLogs()" style="padding:5px 10px; font-size:0.8rem;">مسح السجل</button>
-      </div>
-      <div id="logsContainer"></div>
     </section>
   </div>
 
   <div class="toast" id="toast"></div>
 
   <script>
-    const defaultMembers = [
-      "الفرد 1", "الفرد 2", "الفرد 3", "الفرد 4",
-      "الفرد 5", "الفرد 6", "الفرد 7", "الفرد 8",
-      "الفرد 9", "الفرد 10", "الفرد 11"
+    const ORG_NAME = "السلامة الميدانية بالمنطقة المركزية";
+
+    const STATUS_OPTIONS = [
+      { key: "present", label: "موجود", msgWord: "" },
+      { key: "muslim", label: "مسلم", msgWord: "مسلم" },
+      { key: "leave", label: "اجازة", msgWord: "اجازه" },
+      { key: "crossing", label: "تعدية", msgWord: "تعدية" },
+      { key: "sick", label: "مرضية", msgWord: "مرضية" },
+      { key: "companion", label: "مرافق", msgWord: "مرافق" },
+      { key: "absent", label: "غياب", msgWord: "غياب" }
     ];
 
-    const STORAGE_KEY = "takmeel_central_logs_v2";
+    const DEFAULT_MEMBERS = [
+      { id: 1, name: "عبد العزيز", call: "سلام ١-١", status: "present" },
+      { id: 2, name: "احمد", call: "سلام ١-٢", status: "present" },
+      { id: 3, name: "يوسف", call: "سلام ١-٣", status: "present" },
+      { id: 4, name: "احمد شهاب", call: "سلام ١-٤", status: "present" },
+      { id: 5, name: "فيصل", call: "سلام ١-٥", status: "present" },
+      { id: 6, name: "عبدالعزيز السهلي", call: "سلام ١-٦", status: "muslim" },
+      { id: 7, name: "ريان", call: "سلام ١-٧", status: "present" },
+      { id: 8, name: "الحمدي", call: "سلام ١-٨", status: "leave" },
+      { id: 9, name: "عبد الهادي", call: "سلام ١-٩", status: "leave" },
+      { id: 10, name: "نادر", call: "سلام ١-١٠", status: "present" },
+      { id: 11, name: "ياسر", call: "سلام ١-١١", status: "present" }
+    ];
+
+    const STORAGE_KEYS = {
+      members: "takmeel_central_safety_members_v3",
+      settings: "takmeel_central_safety_settings_v3",
+      history: "takmeel_central_safety_history_v3"
+    };
+
+    let members = loadMembers();
+    let settings = loadSettings();
+    let history = loadHistory();
+
+    function loadMembers() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.members);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length) return parsed;
+        }
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(DEFAULT_MEMBERS));
+    }
+
+    function loadSettings() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.settings);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const greetingVal = parsed.greeting === "مساء الخير" ? "صباح الخير" : (parsed.greeting || "صباح الخير");
+          return Object.assign({
+            greeting: "صباح الخير",
+            useArabicNums: true,
+            includeOrg: false,
+            themeMode: "beige"
+          }, parsed, { greeting: greetingVal, includeOrg: false });
+        }
+      } catch (e) {}
+      return {
+        greeting: "صباح الخير",
+        useArabicNums: true,
+        includeOrg: false,
+        themeMode: "beige"
+      };
+    }
+
+    function loadHistory() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.history);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (e) {}
+      return [];
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.members, JSON.stringify(members));
+        localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(settings));
+        localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(history));
+      } catch (e) {}
+    }
+
+    function fmtNum(n) {
+      const str = String(Math.max(0, Number(n) || 0));
+      if (!settings.useArabicNums) return str;
+      const map = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+      return str.replace(/\d/g, d => map[Number(d)]);
+    }
+
+    function formatCallForMessage(callText) {
+      const trimmed = (callText || "").trim();
+      if (!trimmed) return "";
+      if (!settings.useArabicNums) {
+        const arMap = { "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4", "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9" };
+        return trimmed.replace(/[٠-٩]/g, ch => arMap[ch] || ch);
+      }
+      return trimmed;
+    }
+
+    function toLatinDigits(str) {
+      const map = { "٠": "0", "١": "1", "٢": "2", "٣": "3", "٤": "4", "٥": "5", "٦": "6", "٧": "7", "٨": "8", "٩": "9" };
+      return String(str || "").replace(/[٠-٩]/g, ch => map[ch] || ch);
+    }
+
+    function updateDateDisplay() {
+      const now = new Date();
+      let hijriDisplay = "";
+      try {
+        hijriDisplay = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(now).replace(/\s*(هـ|هجري)$/u, "").trim();
+      } catch (e) {}
+
+      let gregDisplay = "";
+      try {
+        // Force Gregorian calendar with English/Latin locale so it never falls back to Hijri in ar-SA on iOS
+        const parts = new Intl.DateTimeFormat("en-GB-u-ca-gregory", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        }).formatToParts(now);
+        const day = parts.find(p => p.type === "day")?.value || "";
+        const month = parts.find(p => p.type === "month")?.value || "";
+        const year = parts.find(p => p.type === "year")?.value || "";
+        if (day && month && year) {
+          gregDisplay = `${year}/${month}/${day}`;
+        }
+      } catch (e) {}
+
+      if (!gregDisplay) {
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, "0");
+        const d = String(now.getDate()).padStart(2, "0");
+        gregDisplay = `${y}/${m}/${d}`;
+      }
+
+      const normHijri = toLatinDigits(hijriDisplay);
+      const normGreg = toLatinDigits(gregDisplay);
+      const isActuallyDifferent = normHijri && normGreg && !normHijri.includes(normGreg) && normHijri !== normGreg;
+
+      if (hijriDisplay && isActuallyDifferent) {
+        document.getElementById("dateDisplay").textContent = `${hijriDisplay} هـ — ${gregDisplay} م`;
+      } else if (hijriDisplay) {
+        document.getElementById("dateDisplay").textContent = `${hijriDisplay} هـ`;
+      } else {
+        document.getElementById("dateDisplay").textContent = `${gregDisplay} م`;
+      }
+    }
+
+    function getCounts() {
+      const counts = {
+        total: members.length,
+        present: 0,
+        muslim: 0,
+        leave: 0,
+        crossing: 0,
+        sick: 0,
+        companion: 0,
+        absent: 0
+      };
+      for (const m of members) {
+        if (counts[m.status] !== undefined) {
+          counts[m.status]++;
+        } else {
+          counts.present++;
+        }
+      }
+      return counts;
+    }
+
+    function getStatusWordForGroup(st, count) {
+      if (st.key === "muslim" && count === 2) {
+        return "مسلمين";
+      }
+      return st.msgWord;
+    }
+
+    function buildMessage() {
+      const counts = getCounts();
+      const lines = [
+        "السلام عليكم ورحمة الله وبركاته",
+        settings.greeting
+      ];
+
+
+
+      lines.push(`القوه ${fmtNum(counts.total)} الموجود ${fmtNum(counts.present)}`);
+
+      const orderedStatuses = STATUS_OPTIONS.filter(s => s.key !== "present");
+      for (const st of orderedStatuses) {
+        const groupCalls = members
+          .filter(m => m.status === st.key)
+          .map(m => formatCallForMessage(m.call))
+          .filter(Boolean);
+
+        if (groupCalls.length > 0) {
+          const word = getStatusWordForGroup(st, groupCalls.length);
+          lines.push(`${groupCalls.join(" و")} ${word}`);
+        }
+      }
+
+      return lines.join("\n");
+    }
+
+    function renderStats() {
+      const c = getCounts();
+      const isDark = settings.themeMode === "dark";
+      document.getElementById("headerSummary").textContent = `${fmtNum(c.total)} / ${fmtNum(c.present)}`;
+
+      const items = [
+        { label: "القوة", val: c.total, color: isDark ? "#f3d56b" : "#8c6508" },
+        { label: "الموجود", val: c.present, color: isDark ? "#4ade80" : "#15803d" },
+        { label: "المسلمين", val: c.muslim, color: isDark ? "#38bdf8" : "#0369a1" },
+        { label: "الإجازة", val: c.leave, color: isDark ? "#facc15" : "#a16207" },
+        { label: "التعدية", val: c.crossing, color: isDark ? "#fb923c" : "#c2410c" },
+        { label: "مرضية", val: c.sick, color: isDark ? "#f87171" : "#b91c1c" },
+        { label: "مرافق", val: c.companion, color: isDark ? "#c084fc" : "#7e22ce" },
+        { label: "غياب", val: c.absent, color: isDark ? "#ef4444" : "#991b1b" }
+      ];
+
+      document.getElementById("statsGrid").innerHTML = items.map(it => `
+        <div class="stat-card">
+          <span class="name">${it.label}</span>
+          <span class="num" style="color:${it.color}">${fmtNum(it.val)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderMemberStatusList() {
+      const container = document.getElementById("memberStatusList");
+      container.innerHTML = members.map(m => `
+        <div class="member-row">
+          <div class="member-info">
+            <span class="member-call">${escapeHtml(formatCallForMessage(m.call))}</span>
+            <span class="member-name">${escapeHtml(m.name)}</span>
+          </div>
+          <select class="status-select" onchange="changeMemberStatus(${m.id}, this.value)">
+            ${STATUS_OPTIONS.map(opt => `
+              <option value="${opt.key}" ${m.status === opt.key ? "selected" : ""}>${opt.label}</option>
+            `).join("")}
+          </select>
+        </div>
+      `).join("");
+    }
+
+    function renderMessageAndLinks() {
+      const msg = buildMessage();
+      document.getElementById("messagePreview").textContent = msg;
+      const encoded = encodeURIComponent(msg);
+      document.getElementById("whatsappLink").href = `https://wa.me/?text=${encoded}`;
+      document.getElementById("smsLink").href = `sms:?body=${encoded}`;
+    }
+
+    function renderRosterEditor() {
+      const container = document.getElementById("rosterEditorList");
+      container.innerHTML = members.map(m => `
+        <div class="edit-row">
+          <input type="text" value="${escapeAttr(m.call)}" placeholder="النداء" onchange="updateMemberField(${m.id}, 'call', this.value)" />
+          <input type="text" value="${escapeAttr(m.name)}" placeholder="الاسم" onchange="updateMemberField(${m.id}, 'name', this.value)" />
+          <button type="button" class="btn btn-danger" style="padding: 8px 10px;" onclick="removeMember(${m.id})" title="حذف">✕</button>
+        </div>
+      `).join("");
+    }
+
+    function renderHistory() {
+      const container = document.getElementById("historyList");
+      if (!history.length) {
+        container.innerHTML = `<p style="color:var(--text-muted); font-size:13px; text-align:center; margin:12px 0;">لا توجد رسائل محفوظة في السجل حتى الآن.</p>`;
+        return;
+      }
+
+      container.innerHTML = history.map((item, idx) => `
+        <div class="history-item">
+          <div class="history-head">
+            <span>${escapeHtml(item.time)}</span>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="chip-btn" onclick="copyText(${idx})">نسخ</button>
+              <button type="button" class="chip-btn" onclick="deleteHistoryItem(${idx})">حذف</button>
+            </div>
+          </div>
+          <div class="history-msg">${escapeHtml(item.text)}</div>
+        </div>
+      `).join("");
+    }
+
+    function applyThemeClass() {
+      const isDark = settings.themeMode === "dark";
+      document.body.classList.toggle("dark-theme", isDark);
+      const themeBtn = document.getElementById("btnThemeToggle");
+      if (themeBtn) {
+        themeBtn.textContent = isDark ? "ثيم بيج" : "ثيم داكن";
+      }
+    }
+
+    function toggleTheme() {
+      settings.themeMode = settings.themeMode === "dark" ? "beige" : "dark";
+      renderAll();
+    }
+
+    function renderAll() {
+      applyThemeClass();
+      syncToggleButtons();
+      renderStats();
+      renderMemberStatusList();
+      renderMessageAndLinks();
+      renderRosterEditor();
+      renderHistory();
+      saveState();
+    }
+
+    function syncToggleButtons() {
+      document.getElementById("btnGreetingMorning").classList.toggle("active", settings.greeting === "صباح الخير");
+      document.getElementById("btnArabicNums").classList.toggle("active", settings.useArabicNums);
+    }
+
+    function setGreeting(g) {
+      settings.greeting = g;
+      renderAll();
+    }
+
+    function toggleArabicNums() {
+      settings.useArabicNums = !settings.useArabicNums;
+      renderAll();
+    }
+
+    function changeMemberStatus(id, newStatus) {
+      const target = members.find(m => m.id === id);
+      if (target) {
+        target.status = newStatus;
+        renderAll();
+      }
+    }
+
+    function resetAllPresent() {
+      members = members.map(m => ({ ...m, status: "present" }));
+      renderAll();
+      showToast("تم تعيين جميع الأفراد موجودين");
+    }
+
+    function updateMemberField(id, field, val) {
+      const target = members.find(m => m.id === id);
+      if (target) {
+        target[field] = val.trim();
+        renderAll();
+      }
+    }
+
+    function addMember() {
+      const nameInput = document.getElementById("newMemberName");
+      const callInput = document.getElementById("newMemberCall");
+      const name = nameInput.value.trim();
+      if (!name) {
+        showToast("يرجى إدخال اسم الفرد أولاً");
+        return;
+      }
+      const nextNum = members.length + 1;
+      const call = callInput.value.trim() || `سلام ١-${fmtNum(nextNum)}`;
+      const maxId = members.reduce((acc, m) => Math.max(acc, m.id), 0);
+      members.push({
+        id: maxId + 1,
+        name,
+        call,
+        status: "present"
+      });
+      nameInput.value = "";
+      callInput.value = "";
+      renderAll();
+      showToast("تمت إضافة الفرد إلى القوة");
+    }
+
+    function removeMember(id) {
+      if (members.length <= 1) {
+        showToast("يجب بقاء فرد واحد على الأقل");
+        return;
+      }
+      members = members.filter(m => m.id !== id);
+      renderAll();
+      showToast("تم حذف الفرد");
+    }
+
+    function autoNumberCalls() {
+      members = members.map((m, idx) => ({
+        ...m,
+        call: `سلام ١-${fmtNum(idx + 1)}`
+      }));
+      renderAll();
+      showToast("تم تحديث نداءات القوة تلقائياً");
+    }
+
+    function restoreDefaultRoster() {
+      members = JSON.parse(JSON.stringify(DEFAULT_MEMBERS));
+      renderAll();
+      showToast("تمت استعادة الكشف الأساسي (١١ فرداً)");
+    }
+
+    function copyMessage() {
+      const text = buildMessage();
+      navigator.clipboard?.writeText(text).then(() => {
+        showToast("تم نسخ رسالة التكميل");
+      }).catch(() => {
+        fallbackCopy(text);
+      });
+    }
+
+    function copyText(idx) {
+      const item = history[idx];
+      if (!item) return;
+      navigator.clipboard?.writeText(item.text).then(() => {
+        showToast("تم نسخ الرسالة من السجل");
+      }).catch(() => {
+        fallbackCopy(item.text);
+      });
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("تم نسخ الرسالة");
+    }
+
+    function saveToHistory() {
+      const text = buildMessage();
+      const nowStr = new Date().toLocaleString("ar-SA");
+      history.unshift({
+        time: nowStr,
+        text
+      });
+      if (history.length > 40) history.pop();
+      saveState();
+      renderHistory();
+      showToast("تم حفظ التكميل في السجل");
+    }
+
+    function deleteHistoryItem(idx) {
+      history.splice(idx, 1);
+      saveState();
+      renderHistory();
+    }
+
+    function clearHistory() {
+      history = [];
+      saveState();
+      renderHistory();
+      showToast("تم مسح السجل");
+    }
+
+    function switchTab(tab) {
+      ["report", "roster", "history"].forEach(t => {
+        document.getElementById(`view-${t}`).classList.toggle("hidden", t !== tab);
+        document.getElementById(`tab-${t}`).classList.toggle("active", t === tab);
+      });
+    }
 
     function showToast(msg) {
       const el = document.getElementById("toast");
       el.textContent = msg;
       el.classList.add("show");
-      setTimeout(() => el.classList.remove("show"), 2200);
+      clearTimeout(showToast._timer);
+      showToast._timer = setTimeout(() => el.classList.remove("show"), 2200);
     }
 
-    function initDate() {
-      const dateInput = document.getElementById("shiftDate");
-      if (!dateInput.value) {
-        dateInput.value = new Date().toISOString().split("T")[0];
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeAttr(str) {
+      return String(str || "").replace(/"/g, "&quot;");
+    }
+
+    function initHomeShortcutBanner() {
+      const bar = document.getElementById("homeShortcutBar");
+      if (!bar) return;
+      const isStandalone = window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+      const dismissed = localStorage.getItem("takmeel_hide_home_tip_v1") === "1";
+      if (isStandalone || dismissed) {
+        bar.classList.add("standalone-hide");
       }
     }
 
-    function renderRoster() {
-      const container = document.getElementById("rosterList");
-      container.innerHTML = "";
-      defaultMembers.forEach((name, idx) => {
-        const row = document.createElement("div");
-        row.className = "member-row";
-        row.innerHTML = `
-          <label class="member-check">
-            <input type="checkbox" class="member-cb" data-index="${idx}" checked onchange="updateCountsAndReport()" />
-            <input type="text" class="member-name" value="${name}" oninput="generateReport()" style="padding:5px 8px; font-size:0.86rem;" />
-          </label>
-          <select class="status-select member-status" onchange="updateCountsAndReport()">
-            <option value="على رأس العمل">على رأس العمل</option>
-            <option value="ميداني">ميداني</option>
-            <option value="مهمة">مهمة</option>
-            <option value="إجازة">إجازة</option>
-          </select>
-        `;
-        container.appendChild(row);
-      });
-      updateCountsAndReport();
+    function dismissShortcutBar() {
+      localStorage.setItem("takmeel_hide_home_tip_v1", "1");
+      const bar = document.getElementById("homeShortcutBar");
+      if (bar) bar.classList.add("standalone-hide");
     }
 
-    function toggleAll(checked) {
-      document.querySelectorAll(".member-cb").forEach(cb => {
-        cb.checked = checked;
-      });
-      updateCountsAndReport();
-    }
+    (function setupIosPngAppIcon() {
+      try {
+        const c = document.createElement("canvas");
+        c.width = 180;
+        c.height = 180;
+        const ctx = c.getContext("2d");
+        if (!ctx) return;
 
-    function updateCountsAndReport() {
-      const cbs = [...document.querySelectorAll(".member-cb")];
-      const present = cbs.filter(cb => cb.checked).length;
-      document.getElementById("presentCount").textContent = `الحضور: ${present} / ${cbs.length}`;
-      generateReport();
-    }
+        // Navy gradient background
+        const bg = ctx.createLinearGradient(0, 0, 180, 180);
+        bg.addColorStop(0, "#0d2547");
+        bg.addColorStop(1, "#061224");
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, 180, 180);
 
-    function generateReport() {
-      const date = document.getElementById("shiftDate").value || "-";
-      const period = document.getElementById("shiftPeriod").value;
-      const sector = document.getElementById("sectorName").value.trim() || "المنطقة المركزية";
-      const supervisor = document.getElementById("supervisorName").value.trim();
+        // Gold inner border
+        ctx.strokeStyle = "#e5c354";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(10, 10, 160, 160);
 
-      const extraType = document.getElementById("extraType").value;
-      const extraLocation = document.getElementById("extraLocation").value.trim();
-      const extraNotes = document.getElementById("extraNotes").value.trim();
+        // Outer white ring
+        ctx.beginPath();
+        ctx.arc(90, 82, 52, 0, Math.PI * 2);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = "#d4af37";
+        ctx.stroke();
 
-      const rows = [...document.querySelectorAll(".member-row")];
-      const presentMembers = [];
-      const absentMembers = [];
+        // Inner light-blue globe
+        ctx.beginPath();
+        ctx.arc(90, 82, 34, 0, Math.PI * 2);
+        ctx.fillStyle = "#cbe5f6";
+        ctx.fill();
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "#2b6396";
+        ctx.stroke();
 
-      rows.forEach(r => {
-        const checked = r.querySelector(".member-cb").checked;
-        const name = r.querySelector(".member-name").value.trim() || "فرد";
-        const status = r.querySelector(".member-status").value;
-        if (checked) {
-          presentMembers.push(`${name} (${status})`);
-        } else {
-          absentMembers.push(`${name} (${status})`);
+        // Globe meridians & equator
+        ctx.beginPath();
+        ctx.ellipse(90, 82, 16, 34, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "#3b73a8";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(56, 82);
+        ctx.lineTo(124, 82);
+        ctx.stroke();
+
+        // Saudi map silhouette
+        ctx.beginPath();
+        ctx.moveTo(73, 72);
+        ctx.lineTo(98, 67);
+        ctx.lineTo(110, 75);
+        ctx.lineTo(106, 89);
+        ctx.lineTo(94, 95);
+        ctx.lineTo(83, 92);
+        ctx.lineTo(75, 83);
+        ctx.closePath();
+        ctx.fillStyle = "#f3c65f";
+        ctx.fill();
+        ctx.lineWidth = 1.2;
+        ctx.strokeStyle = "#8a6210";
+        ctx.stroke();
+
+        // Blue safety triangle
+        ctx.beginPath();
+        ctx.moveTo(90, 73);
+        ctx.lineTo(81, 88);
+        ctx.lineTo(99, 88);
+        ctx.closePath();
+        ctx.fillStyle = "#173873";
+        ctx.fill();
+
+        // Palm & crossed swords at top
+        ctx.strokeStyle = "#2d7a46";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(90, 35);
+        ctx.lineTo(90, 53);
+        ctx.stroke();
+
+        ctx.fillStyle = "#2d7a46";
+        for (const [yOff, spread, rOff] of [[36, 11, 5], [41, 10, 5]]) {
+          ctx.beginPath();
+          ctx.ellipse(90 - spread * 0.55, yOff, spread * 0.55, 2.5, -0.35, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.ellipse(90 + spread * 0.55, yOff, spread * 0.55, 2.5, 0.35, 0, Math.PI * 2);
+          ctx.fill();
         }
-      });
 
-      let text = `تكميل السلامة الميدانية - ${sector}\n`;
-      text += `التاريخ: ${date} | الفترة: ${period}\n`;
-      if (supervisor) text += `المسؤول: ${supervisor}\n`;
-      text += `إجمالي القوة: ${rows.length} | الحضور: ${presentMembers.length} | الغياب/غير متواجد: ${absentMembers.length}\n`;
+        ctx.strokeStyle = "#d4af37";
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(77, 52);
+        ctx.lineTo(103, 42);
+        ctx.moveTo(103, 52);
+        ctx.lineTo(77, 42);
+        ctx.stroke();
 
-      if (presentMembers.length) {
-        text += `\nالحضور:\n- ${presentMembers.join("\n- ")}`;
-      }
-      if (absentMembers.length) {
-        text += `\n\nغير متواجدين:\n- ${absentMembers.join("\n- ")}`;
-      }
+        // Green laurel branches
+        ctx.strokeStyle = "#1e6b3b";
+        ctx.lineWidth = 3.2;
+        ctx.beginPath();
+        ctx.arc(90, 82, 42, 2.25, 3.85);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(90, 82, 42, -0.71, 0.89);
+        ctx.stroke();
 
-      if (extraLocation || extraNotes) {
-        text += `\n\nإضافات التكميل (${extraType}):`;
-        if (extraLocation) text += `\n- الموقع/المنشأة: ${extraLocation}`;
-        if (extraNotes) text += `\n- التفاصيل: ${extraNotes}`;
-      }
+        // Bottom ribbon
+        ctx.beginPath();
+        ctx.moveTo(45, 124);
+        ctx.lineTo(63, 115);
+        ctx.lineTo(117, 115);
+        ctx.lineTo(135, 124);
+        ctx.lineTo(126, 135);
+        ctx.lineTo(113, 130);
+        ctx.lineTo(67, 130);
+        ctx.lineTo(54, 135);
+        ctx.closePath();
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+        ctx.lineWidth = 1.8;
+        ctx.strokeStyle = "#1b365d";
+        ctx.stroke();
 
-      document.getElementById("reportOutput").textContent = text;
-    }
+        ctx.fillStyle = "#0b1f3a";
+        ctx.font = "800 11px Cairo, Arial, sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("الدفاع المدني", 90, 124);
 
-    function copyReport() {
-      const text = document.getElementById("reportOutput").textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        showToast("تم نسخ نص التكميل");
-      });
-    }
+        // Bottom label
+        ctx.fillStyle = "#f7dc7c";
+        ctx.font = "800 14px Cairo, Arial, sans-serif";
+        ctx.fillText("التكميل", 90, 155);
 
-    function saveLog() {
-      const text = document.getElementById("reportOutput").textContent;
-      const logs = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      logs.unshift({
-        id: Date.now(),
-        savedAt: new Date().toLocaleString("ar-SA"),
-        content: text
-      });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
-      renderLogs();
-      showToast("تم حفظ التكميل في السجل");
-    }
+        const pngUrl = c.toDataURL("image/png");
+        let appleLink = document.querySelector('link[rel="apple-touch-icon"]');
+        if (!appleLink) {
+          appleLink = document.createElement("link");
+          appleLink.rel = "apple-touch-icon";
+          document.head.appendChild(appleLink);
+        }
+        appleLink.href = pngUrl;
 
-    function renderLogs() {
-      const container = document.getElementById("logsContainer");
-      const logs = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-      if (!logs.length) {
-        container.innerHTML = `<p style="color:var(--ivory-muted); font-size:0.9rem;">لا توجد سجلات محفوظة حالياً.</p>`;
-        return;
-      }
-      container.innerHTML = logs.map(item => `
-        <div class="log-item">
-          <div class="log-meta">محفوظ بتاريخ: ${item.savedAt}</div>
-          <div style="white-space:pre-wrap; font-size:0.88rem;">${item.content}</div>
-        </div>
-      `).join("");
-    }
-
-    function clearLogs() {
-      localStorage.removeItem(STORAGE_KEY);
-      renderLogs();
-      showToast("تم مسح السجل");
-    }
-
-    ["shiftDate", "shiftPeriod", "sectorName", "supervisorName", "extraType", "extraLocation", "extraNotes"]
-      .forEach(id => {
-        document.getElementById(id).addEventListener("input", generateReport);
-        document.getElementById(id).addEventListener("change", generateReport);
-      });
-
-    initDate();
-    renderRoster();
-    renderLogs();
+        let favLink = document.querySelector('link[rel="icon"]');
+        if (favLink) {
+          favLink.type = "image/png";
+          favLink.href = pngUrl;
+        }
+      } catch (e) {}
+    })();
+    updateDateDisplay();
+    initHomeShortcutBanner();
+    renderAll();
   </script>
 </body>
 </html>
